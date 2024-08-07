@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feed - Barber Ya App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(to right, blue, white, red);
+            color: black;
+            padding: 1rem;
+            text-align: center;
+            position: relative;
+            transition: background 0.5s;
+        }
+        header:hover {
+            background: linear-gradient(to right, red, white, blue);
+        }
+        header img {
+            position: absolute;
+            left: 20px;
+            height: 100px;
+            width: auto;
+            border-radius: 50%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        header img:hover {
+            transform: scale(1.1);
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h2 {
+            color: #333;
+            margin-top: 0;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: border-color 0.3s;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: blue;
+            outline: none;
+        }
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            background-color: blue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .form-group button:hover {
+            background-color: darkblue;
+            transform: translateY(-2px);
+        }
+        .feed {
+            margin-top: 30px;
+        }
+        .post {
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: #f9f9f9;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+        .post h3 {
+            margin-top: 0;
+        }
+        .post img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #f0f0f0;
+            color: #333;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+        }
+        /* Media Queries */
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+            header img {
+                position: relative;
+                margin-bottom: 10px;
+                left: auto;
+                right: auto;
+            }
+            .container {
+                margin: 20px;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://github.com/Juangillban/Barberyapp/raw/main/logo%202.jpg" alt="Logo de Barber Ya App">
+        <h1>Barber Ya App</h1>
+    </header>
+    <div class="container">
+        <h2>Subir Contenido</h2>
+        <form action="pagina_de_subida.php" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="title">Título</label>
+                <input type="text" id="title" name="title" required>
+            </div>
+            <div class="form-group">
+                <label for="content">Contenido</label>
+                <textarea id="content" name="content" rows="5" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="image">Imagen</label>
+                <input type="file" id="image" name="image" accept="image/*">
+            </div>
+            <div class="form-group">
+                <button type="submit">Subir</button>
+            </div>
+        </form>
+        <footer>
+            &copy; 2024 Barber Ya App. Todos los derechos reservados.
+        </footer>
+        <div class="feed">
+            <h2>Feed</h2>
+            
+            <div class="post">
+                <h3>Título de la Publicación</h3>
+                <p>Contenido de la publicación. Este es un ejemplo de cómo se verá una publicación en el feed.</p>
+                <img src="URL_DE_LA_IMAGEN" alt="Descripción de la imagen">
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
